@@ -51,13 +51,13 @@ function billWithSettings(){
         smsCostTotal += theSmsCost
     }
     function totalClassName(){
-        if(getTotalCost() >= getCriticalLevel()) {
-            return "critical"
-        }
-        if(getTotalCost() >= getWarningLevel()) {
+        
+        if(getTotalCost() >= getWarningLevel() && getTotalCost() < getCriticalLevel()) {
             return "warning"
         }
-
+if(getTotalCost() >= getCriticalLevel()) {
+            return "critical"
+        }
     }
     return {
         setCallCost,

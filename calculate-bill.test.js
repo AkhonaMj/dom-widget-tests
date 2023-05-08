@@ -1,7 +1,9 @@
 describe("The calculate bill function", function(){
 
-it("should calculate the bill total", function(){
-assert.equal(calculateBtnClicked("call"), billTotal)
+it(" If two calls were made , it should return 5.5", function(){
+    var calculateBill = calculateBtnClicked("call,call");
+
+assert.equal(5.50, calculateBill.callOrSms())
 })
 
 });
