@@ -148,7 +148,7 @@ describe("Warning and Critical level", function () {
     settingsBill.makeCall();
     settingsBill.makeCall();
     settingsBill.makeCall();
-    console.log(settingsBill.getTotalCost())
+   // console.log(settingsBill.getTotalCost())
     
     assert.equal("critical", settingsBill.totalClassName());
 
@@ -170,6 +170,36 @@ describe("Warning and Critical level", function () {
     settingsBill.makeCall();
     assert.equal("critical", settingsBill.totalClassName());
     assert.equal(10, settingsBill.getTotaCalllCost());
+
+
+
+  });
+  it("Should allow the totalto increase when the  critical level has been reached, then upping the critical level", function () {
+    let settingsBill = billWithSettings();
+
+   
+    settingsBill.setCallCost(2.);
+   
+    settingsBill.setCallCost(2.);
+    settingsBill.setSmsCost(0.5);
+    settingsBill.setWarningLevel(8);
+    settingsBill.setCriticalLevel(10);
+
+    settingsBill.sendSms();
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    assert.equal("critical", settingsBill.totalClassName());
+    assert.equal(10, settingsBill.getTotaCalllCost());
+
+    settingsBill.setCriticalLevel(20);
+    assert.equal("warning", settingsBill.totalClassName());
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    settingsBill.makeCall();
+    assert.equal(16, settingsBill.getTotaCalllCost());
 
 
 
