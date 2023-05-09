@@ -7,6 +7,7 @@ assert.equal(5.50, calculateBill.callOrSms());
 
 });
 
+
 it("If two sms's were made , it should return 1.5 ", function(){
     var calculateBill = calculateBtnClicked("sms,sms");
 
