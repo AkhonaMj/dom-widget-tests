@@ -174,7 +174,7 @@ describe("Warning and Critical level", function () {
 
 
   });
-  it("Should allow the totalto increase when the  critical level has been reached, then upping the critical level", function () {
+  it("Should allow the total to increase when the  critical level has been reached, then upping the critical level", function () {
     let settingsBill = billWithSettings();
 
    
@@ -204,4 +204,5 @@ describe("Warning and Critical level", function () {
 
 
   });
+
 });
